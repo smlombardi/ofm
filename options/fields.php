@@ -17,18 +17,19 @@ array( "name" => "Title Font Size",
  "type" => "text",
  "std" => "",
  "class" => "small-text"),
- 
+
  array( "name" => "Title Banner Image",
  "desc" => "Enter the URL of your image banner to be displayed in the header. This will replace the blog title and description.",
  "id" => $shortname."_bannerimage",
  "type" => "text",
  "std" => ""),
- 
- array( "name" => "Disable Post Thumbnails in single view",
- "desc" => "When viewing an individual post or page, the post thumbnail will not be shown",
- "id" => $shortname."_hidepostthumb",
- "type" => "checkbox",
- "std" => ""),
+
+ // replaced with a ACF on a per-page basis
+ // array( "name" => "Disable Post Thumbnails in single view",
+ // "desc" => "When viewing an individual post or page, the post thumbnail will not be shown",
+ // "id" => $shortname."_hidepostthumb",
+ // "type" => "checkbox",
+ // "std" => ""),
 
 
 array( "name" => "Disable Comments in Page",
@@ -36,7 +37,7 @@ array( "name" => "Disable Comments in Page",
  "id" => $shortname."_pagecommentdisable",
  "type" => "checkbox",
  "std" => ""),
- 
+
 array( "name" => "Hide tags for posts",
  "desc" => "Hide the tags in the footers of posts leaving only catagories and comments (and edit post link if you are logged in as admin)",
  "id" => $shortname."_hidetags",
@@ -49,13 +50,13 @@ array( "name" => "Delete Extra Feeds",
  "id" => $shortname."_cleanfeedurls",
  "type" => "checkbox",
  "std" => ""),
- 
+
 array( "name" => "Extra Styling Code",
  "desc" => "Put extra CSS styling code in here",
  "id" => $shortname."_custom_css",
  "type" => "textarea",
  "std" => ""),
- 
+
 
 
 array( "name" => "Extra Header Code",
@@ -72,7 +73,7 @@ array( "name" => "Analytics/Tracking Code",
 
 array( "type" => "close")
 
-); 
+);
 
 $sa_settings = get_option( 'sa_options' ); //gets the current value of all the settings as stored in the db
 
@@ -84,7 +85,7 @@ $sa_settings = get_option( 'sa_options' ); //gets the current value of all the s
 	?>
 
 		<tr valign="top" class="options_input options_text">
-			
+
 			<th><span class="labels"><label for="sa_options[<?php echo $value['id']; ?>]"><?php echo $value['name']; ?></label></th>
 			<td><input type="<?php echo $value['type']; ?>" name="sa_options[<?php echo $value['id']; ?>]" id="sa_options[<?php echo $value['id']; ?>]" class="<?php echo $value['class']; ?>" value="<?php if ( $sa_settings[ $value['id'] ]  != "") { echo stripslashes( $sa_settings[ $value['id'] ] ); } else { echo $value[ 'std' ]; } ?>" /></span></td>
 			<td><span class="description"><?php echo $value['desc']; ?></span></td>
@@ -100,7 +101,7 @@ $sa_settings = get_option( 'sa_options' ); //gets the current value of all the s
 			<th><label for="sa_options[<?php echo $value['id']; ?>]"><?php echo $value['name']; ?></label></th>
 			<td colspan=2><p><span class="description"><?php echo $value['desc']; ?></span></p>
 			<textarea name="sa_options[<?php echo $value['id']; ?>]" type="<?php echo $value['type']; ?>" class="large-text code" cols="50" rows="10"><?php if ( $sa_settings[ $value['id'] ]  != "") { echo stripslashes( $sa_settings[ $value['id'] ] ); } else { echo $value[ 'std' ]; } ?></textarea></td>
-			
+
 		</tr>
 
 	<?php
@@ -110,7 +111,7 @@ $sa_settings = get_option( 'sa_options' ); //gets the current value of all the s
 	case 'select':
 	?>
 		<tr class="options_input options_select">
-			
+
 			<th><span class="labels"><label for="sa_options[<?php echo $value['id']; ?>]"><?php echo $value['name']; ?></label></span></th>
 			<td><select name="sa_options[<?php echo $value['id']; ?>]" id="sa_options[<?php echo $value['id']; ?>]">
 			<?php foreach ($value['options'] as $option) { ?>
@@ -126,7 +127,7 @@ $sa_settings = get_option( 'sa_options' ); //gets the current value of all the s
 	case "radio":
 	?>
 		<tr class="options_input options_select">
-			
+
 			<td><span class="labels"><label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label></span></td>
 			  <?php foreach ($value['options'] as $key=>$option) {
 				$radio_setting = get_option($value['id']);
@@ -155,7 +156,7 @@ $sa_settings = get_option( 'sa_options' ); //gets the current value of all the s
 	case "checkbox":
 	?>
 		<tr class="options_input options_checkbox">
-			
+
 			<?php if($sa_settings[ $value['id'] ]){ $checked = "checked=\"checked\""; }else{ $checked = "";} ?>
 			<td></td>
 			<td><input type="checkbox" name="sa_options[<?php echo $value['id']; ?>]" id="sa_options[<?php echo $value['id']; ?>]" value="true" <?php echo $checked; ?> /> <label for="sa_options[<?php echo $value['id']; ?>]"><?php echo $value['name']; ?></label></td>
