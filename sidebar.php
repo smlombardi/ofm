@@ -2,10 +2,14 @@
 
 /**
  * @package WordPress
- * @subpackage Cleanfrog
+ * @subpackage OFM
  */
 ?>
 
+
+
+<div class="row">
+  <div class="col-md-2">
 
 <div id="sidebar">
 
@@ -32,7 +36,6 @@
 <?php endif; ?>
 
 </ul>
-
-
-
 </div>
+
+</div></div>

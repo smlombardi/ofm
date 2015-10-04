@@ -224,7 +224,7 @@ blockquote {
   background: transparent url('images/qo.png') no-repeat scroll left top;
   padding-left: 23px;
   padding-top: 7px;
-  max-width: 450px;
+  // max-width: 450px;
   font-style: italic;
 
   p:first-child {
@@ -233,7 +233,7 @@ blockquote {
     margin: 0;
     background: transparent url('images/qc.png') no-repeat scroll right bottom;
     padding-right: 22px;
-    width: auto;
+    // width: auto;
   }
 
   p:first-child:first-letter {
@@ -250,7 +250,7 @@ blockquote {
 }
 
 hr {
-  width: 90%;
+  // width: 90%;
   border: 0;
   background-color: #555;
   height: 2px;
@@ -273,7 +273,7 @@ textarea {
 }
 
 input#s {
-  width: 123px;
+  // width: 123px;
 }
 
 // Box Styles styles */
@@ -292,7 +292,7 @@ input#s {
   clear: both;
 }
 
-#footer {
+footer {
   padding: 20px 10px 40px;
   min-height: 50px;
   border-top: 1px #888 solid;
@@ -331,15 +331,11 @@ input#s {
 }
 
 #footcontain {
-  width: 890px;
-  margin-left: auto;
-  margin-right: auto;
   padding: 0 10px;
 }
 
 #footer-right .widget ul,
 #footer-center .widget ul {
-  margin-right: -28px;
 }
 
 p.hardfoot {
@@ -365,7 +361,6 @@ p.hardfoot {
     color: #234b7b;
     font-size: 20px;
     border-bottom: 1px #ccc solid;
-    max-width: 580px;
     display: block;
 
     &:hover {
@@ -383,7 +378,6 @@ p.hardfoot {
 .sticky .posthead h2 a {
   background: transparent url('images/sticky.png') no-repeat center left;
   padding-left: 20px;
-  max-width: 560px;
 }
 
 .dater {
@@ -413,7 +407,7 @@ p.hardfoot {
     border-color: #aaa;
     line-height: 10px;
     margin-top: 4px;
-    font-size: 0.6em;
+    font-size: .6em;
     padding: 3px 0;
     text-transform: uppercase;
     font-weight: bolder;
@@ -520,7 +514,7 @@ p.hardfoot {
 }
 
 #navbox {
-  width: 1000px;
+  // width: 1000px;
   margin-left: auto;
   margin-right: auto;
   background-color: #fff;
@@ -567,7 +561,7 @@ p.hardfoot {
 }
 
 #navbox ul ul li {
-  width: 100%;
+  // width: 100%;
   padding: 1px 2px;
 }
 
@@ -621,7 +615,7 @@ form.searchform div {
 /*Sidebar Styles */
 #sidebar {
   float: right;
-  width: 192px;
+  // width: 192px;
   padding: 8px;
 }
 
@@ -670,7 +664,7 @@ form.searchform div {
 }
 
 #sidebar .widgettitle {
-  width: 80%;
+  // width: 80%;
   display: block;
   font-family: Arial, Helvetica, sans-serif;
   /*font-family: Georgia,serif;*/
@@ -735,7 +729,7 @@ form.searchform div {
 }
 
 #comment {
-  width: 380px;
+  // width: 380px;
   height: 125px;
 }
 
@@ -748,7 +742,7 @@ form.searchform div {
 textarea#comment {
   font-size: 14px;
   font-family: Arial, 'Helvetica LT Std', sans-serif;
-  width: 400px;
+  // width: 400px;
 }
 
 .navigation {
@@ -811,7 +805,7 @@ textarea#comment {
 .widget li {
   border-bottom: 1px #ddd dashed;
   padding: 2px 0;
-  width: 90%;
+  // width: 90%;
   overflow: hidden;
 }
 
@@ -913,7 +907,7 @@ table.fpage {
   margin: 5px;
   margin-bottom: 20px;
   float: left;
-  width: calc(33% - 10px);
+  // width: calc(33% - 10px);
   /*height:400px;*/
   background-color: white;
 }
@@ -936,7 +930,7 @@ table.fpage {
 
 .home2 td {
   border: 1px solid #ddd;
-  width: 33%;
+  // width: 33%;
 }
 
 .home2a {
@@ -944,7 +938,7 @@ table.fpage {
 }
 
 .home2a td {
-  width: 25%;
+  // width: 25%;
 }
 
 /*BUTTON HOMEPAGE*/
@@ -979,12 +973,12 @@ table.fpage {
 
 .left300 {
   float: left;
-  width: 300px;
+  // width: 300px;
 }
 
 .right300 {
   float: right;
-  width: 300px;
+  // width: 300px;
 }
 
 #navbox ul li a:last child.clearstick {
@@ -1023,28 +1017,28 @@ li#menu-item-328.clearstick {
 }
 
 .product-top {
-  font-family: 'Apple Chancery', Georgia, serif!important;
+  font-family: 'Apple Chancery', Georgia, serif !important;
   font-size: 25px;
   border-top: 1px solid #ff0d69;
   padding: 10px 0;
   color: #000265;
   font-style: italic;
   margin-top: 20px;
+  a {
+    color: $pink;
+    text-decoration: none;
+    &:hover {
+      color: #ff0d69;
+    }
+  }
 }
 
-.product-top a {
-  color: $pink;
-  text-decoration: none;
-}
 
-.product-top a:hover {
-  color: #ff0d69;
-}
 
 /* was added as extra css in theme settings */
 /*For mailchimp button*/
 .yks-mailchimpFormDivSubmit {
-  width: 50%!important;
+  // width: 50%!important;
 }
 
 .yks-mailchimpFormDivSubmit {
@@ -1115,7 +1109,7 @@ li#menu-item-328.clearstick {
 }
 
 .widget li {
-  width: auto;
+  // width: auto;
 }
 
 .widget ul li:first-child {

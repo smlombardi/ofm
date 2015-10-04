@@ -116,8 +116,10 @@ add_filter('excerpt_more', 'new_excerpt_more');
 
 if (!is_admin()) { // instruction to only load if it is not the admin area
 
+  wp_register_script( 'jquery-js', get_template_directory_uri() . '/js/jquery.min.js', array( 'jquery' ), '3.0.1', true );
 
-    wp_enqueue_script('jquery');
+  wp_enqueue_script('jquery-js');
+
 
    // cufon scripts
 

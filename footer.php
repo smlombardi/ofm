@@ -1,22 +1,12 @@
 <?php
 
 
+ /**
 
-/**
-
- * @package WordPress
-
- * @subpackage Cleanfrog
-
- */
-
- 
-
- if (!isset($sa_settings)){
-
-$sa_settings = get_option( 'sa_options' ); //gets the current value of all the settings as stored in the db
-
-}
+  */
+ if (!isset($sa_settings)) {
+     $sa_settings = get_option('sa_options'); //gets the current value of all the settings as stored in the db
+ }
 
 ?>
 
@@ -28,15 +18,13 @@ $sa_settings = get_option( 'sa_options' ); //gets the current value of all the s
 
 </div>
 
-<div id="footer">
+
+
+<footer>
+<div class="row">
+  <div class="col-md-12">
 
 	<div id="footcontain">
-
-	
-
-
-
-	
 
 	<ul class="footbar" id="footer-center"><li></li>
 
@@ -44,26 +32,30 @@ $sa_settings = get_option( 'sa_options' ); //gets the current value of all the s
 
 	</ul>
 
-	
-		
 
 			<p class="hardfoot">Old Fashioned Mom Magazine | Copyright &copy; <?php echo date('Y'); ?> | <a href="mailto:mmh@oldfashionedmom.org" target="_top">Advertising</a><br /><a href="mailto:mmh@oldfashionedmom.org" target="_top">
 
 Contact Michelle-Marie Heinemann: mmh@oldfashionedmom.org</a></p>
 
-		
 
-	
+
+
 
 	</div>
 
 </div>
+</div>
 
-<?php if ($sa_settings['cf_analytics_code'] != '') { ?>
+</footer>
 
-<?php echo(stripslashes ($sa_settings['cf_analytics_code']));?>
+<?php if ($sa_settings['cf_analytics_code'] != '') {
+    ?>
 
-<?php } ?>
+<?php echo(stripslashes($sa_settings['cf_analytics_code']));
+    ?>
+
+<?php
+} ?>
 
 
 
@@ -74,4 +66,3 @@ Contact Michelle-Marie Heinemann: mmh@oldfashionedmom.org</a></p>
 
 
 </html>
-
