@@ -21,36 +21,42 @@ global $sa_settings;
   <meta name="p:domain_verify" content="2c7d06a99910a5abaa87885533e0c92d"/>
   <link href="<?php bloginfo('stylesheet_url'); ?>" media="screen" rel="stylesheet" type="text/css" />
 
-  <?php if ($sa_settings['cf_custom_css'] != '') { ?><!-- Here is the custom css -->
+  <?php if ($sa_settings['cf_custom_css'] != '') {
+    ?><!-- Here is the custom css -->
 
   <style type="text/css" media="screen">
-    <?php echo stripcslashes($sa_settings['cf_custom_css']); ?>
+    <?php echo stripcslashes($sa_settings['cf_custom_css']);
+    ?>
   </style>
 
-  <?php } ?>
+  <?php
+} ?>
 
-  <?php if (is_numeric($sa_settings['cf_headerfontsize'])) {?>
+  <?php if (is_numeric($sa_settings['cf_headerfontsize'])) {
+    ?>
   <style type="text/css">
     #header h1, #header h1 a{
-    	font-size: <?php echo($sa_settings['cf_headerfontsize']); ?>px;
+    	font-size: <?php echo($sa_settings['cf_headerfontsize']);
+    ?>px;
     }
   </style>
 
   <?php
-  } ?>
+
+} ?>
 
 
 
   <?php if (is_singular()) {
-      wp_enqueue_script('comment-reply');
-  } ?>
+    wp_enqueue_script('comment-reply');
+} ?>
 
 
   <?php //wp_get_archives('type=monthly&format=link'); ?><?php //comments_popup_script(); // off by default ?>
 
   <?php if ($sa_settings['cf_header_code'] != '') {
-      echo stripslashes($sa_settings['cf_header_code']);
-  }?>
+    echo stripslashes($sa_settings['cf_header_code']);
+}?>
 
   <?php wp_head(); ?>
 
@@ -71,52 +77,59 @@ global $sa_settings;
 	  <header>
 	        <!-- header image -->
 	        <a href="<?php echo home_url(); ?>">
-	            <img class="img-responsive" src="<? bloginfo('stylesheet_directory'); ?>/images/old-fashioned-mom-logo.jpg"/>
+	            <img class="img-responsive" src="<?php bloginfo('stylesheet_directory'); ?>/images/old-fashioned-mom-logo.jpg"/>
 	        </a>
 	  </header>
 	</div>
-
 </div>
 
-<div align="center"
-><div class="cities-top">New York <span class="red-top">&#8226;</span> Paris <span class="red-top">&#8226;</span> London <span class="red-top">&#8226;</span> Palm Beach</div></div>
-<div align="center"><div class="product-top"><a href="http://oldfashionedmomstore.org/">New!!! Shop Old Fashioned Mom Products!!!</a></div></div>
- <div id="navbox">
+<div class="row">
+  <div class="col-md-12 text-center">
+    <div class="cities-top">New York <span class="red-top">&#8226;</span> Paris <span class="red-top">&#8226;</span> London <span class="red-top">&#8226;</span> Palm Beach <span class="red-top">&#8226;</span> Hudson Valley</div>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 text-center">
+    <div class="product-top"><a href="http://oldfashionedmomstore.org/">New!!! Shop Old Fashioned Mom Products!!!</a></div>
+</div>
+</div>
 
 
-
+<div class="row">
+  <div class="col-md-12 text-center">
+     <div id="navbox">
 			<?php
-
         $margs = array(
-
         'menu_id' => 'navbar',
-
         'container_class' => 'menu',
         'depth' => '2',
         );
-
         wp_nav_menu($margs);
-
       ?>
+    </div>
+    </div>
 
 <div id="navclearerTop"></div>
 
-<div id="navbox">
-            <?php wp_nav_menu(array('theme_location' => 'secondary-menu')); ?>
-</div>
+
+<div class="row">
+  <div class="col-md-12 text-center">
+    <div id="navbox">
+        <?php wp_nav_menu(array('theme_location' => 'secondary-menu')); ?>
+    </div>
+</div></div>
 
 <?php /*get_search_form();*/ ?>
 
-
-
-
-
-
-
-
-
-
 <div id="navclearer"></div></div>
 
+
+<div class="row">
+  <div class="col-md-12 text-center">
 <div id="contentcontainer">
+
+  <div class="row">
+    <div class="col-md-8">
   <div id="content">
