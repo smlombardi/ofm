@@ -32,18 +32,13 @@
 
 	</ul>
 
-
-			<p class="hardfoot">Old Fashioned Mom Magazine | Copyright &copy; <?php echo date('Y'); ?> | <a href="mailto:mmh@oldfashionedmom.org" target="_top">Advertising</a><br /><a href="mailto:mmh@oldfashionedmom.org" target="_top">
-
-Contact Michelle-Marie Heinemann: mmh@oldfashionedmom.org</a></p>
-
-
-
-
-
-	</div>
-
 </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+			<p class="hardfoot">Old Fashioned Mom Magazine | Copyright &copy; <?php echo date('Y'); ?> | <a href="mailto:mmh@oldfashionedmom.org" target="_top">Advertising</a><br /><a href="mailto:mmh@oldfashionedmom.org" target="_top"> Contact Michelle-Marie Heinemann: mmh@oldfashionedmom.org</a></p>
+  </div>
 </div>
 
 </footer>

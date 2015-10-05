@@ -131,5 +131,5 @@ global $sa_settings;
 <div id="contentcontainer">
 
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-10">
   <div id="content">

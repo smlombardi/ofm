@@ -1,30 +1,26 @@
 <?php
 
 /**
- * @package WordPress
- * @subpackage OFM
  */
 ?>
 
 
 
-<div class="row">
-  <div class="col-md-2">
 
-<div id="sidebar">
+<div id="sidebar" class="col-md-2">
 
 <ul>
 
-<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar(1) ) : else : ?>
+<?php if (function_exists('dynamic_sidebar') && dynamic_sidebar(1)) : else : ?>
 <li id="archives" class="widget">
-				<h2 class="widgettitle"><?php _e( 'Archives', 'cleanfrog' ); ?></h2>
+				<h2 class="widgettitle"><?php _e('Archives', 'cleanfrog'); ?></h2>
 				<ul>
-					<?php wp_get_archives( 'type=monthly' ); ?>
+					<?php wp_get_archives('type=monthly'); ?>
 				</ul>
 			</li>
 
 			<li id="meta" class="widget">
-				<h2 class="widgettitle"><?php _e( 'Meta', 'cleanfrog' ); ?></h2>
+				<h2 class="widgettitle"><?php _e('Meta', 'cleanfrog'); ?></h2>
 				<ul>
 					<?php wp_register(); ?>
 					<li><?php wp_loginout(); ?></li>
@@ -37,5 +33,3 @@
 
 </ul>
 </div>
-
-</div></div>

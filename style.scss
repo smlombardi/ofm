@@ -18,6 +18,9 @@ License URI: http://www.gnu.org/licenses/gpl.html
 */
 // scss-lint:disable Comment, ImportantRule, NestingDepth
 /* DO NOT EDIT THIS CSS!  EDIT THE STYLES.SCSS FILE!!! IT WILL OVER-WRITE STYLES.CSS!!!  */
+
+
+
 $pink: #dc34ba;
 
 a,
@@ -43,33 +46,11 @@ a:hover {
   color: #444;
 }
 
-/*added for current menu active - KF*/
-#navbox .current-menu-item a {
-  color: #ff0d69;
-}
 
 .postid-920 img.wp-post-image {
   display: none;
 }
 
-.button.large {
-  background: $pink linear-gradient(center top, $pink 0%, #f014c4 100%) repeat scroll 0 0 #f014c4;
-  font-size: 12px;
-  border: 1px solid #f014c4;
-  color: #fff !important;
-  border-radius: 4px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
-  padding: 3px;
-  text-align: center;
-  text-shadow: 0 1px 0 #f014c4;
-  text-transform: uppercase;
-  display: inline-block;
-  text-decoration: none;
-  position: absolute;
-  bottom: 5px;
-  left: 5px;
-  min-height: 0 !important;
-}
 
 .features {
   border: 1px solid #ddd;
@@ -135,8 +116,14 @@ p,
 }
 
 a {
-  outline: 0;
+  color: $pink;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+
 }
+
 
 img.alignleft {
   margin-right: 10px;
@@ -166,20 +153,6 @@ img + a {
   border: 0 #ccc solid;
 }
 
-#content a,
-.postmetadata a,
-#content p a:visited,
-#sidebar a,
-#content ul li a,
-#content ol li a,
-#footer p a,
-.navigation a,
-.page-link a,
-.footbar a {
-  /*'original color changed to pink'color: #ed6a34;*/
-  color: #f0f;
-  text-decoration: none;
-}
 
 #content a:hover,
 #sidebar a:hover,
@@ -206,6 +179,9 @@ img + a {
   clear: both;
   margin-top: 4px;
   overflow: hidden;
+  a img {
+    border-style: none;
+  }
   h3 {
     font-size: 16px;
   }
@@ -219,6 +195,7 @@ img + a {
     }
   }
 }
+
 
 blockquote {
   background: transparent url('images/qo.png') no-repeat scroll left top;
@@ -278,7 +255,7 @@ input#s {
 
 // Box Styles styles */
 #container {
-  border-style: none solid none;
+  border-style: none solid;
   border-width: 0 1px;
   border-color: #ccc;
   background-color: #fff;
@@ -334,9 +311,7 @@ footer {
   padding: 0 10px;
 }
 
-#footer-right .widget ul,
-#footer-center .widget ul {
-}
+
 
 p.hardfoot {
   text-align: center;
@@ -478,9 +453,7 @@ p.hardfoot {
   border-radius: 6px;
 }
 
-#content a img {
-  border-style: none;
-}
+
 
 .wp-caption-text {
   text-align: center;
@@ -508,79 +481,82 @@ p.hardfoot {
 //*Navigation Styles */
 #navclearer {
   clear: both;
-  border-bottom: 1px #ff0d69 solid;
+  border-bottom: 1px $pink solid;
   height: 10px;
   background-color: #fff;
 }
 
-#navbox {
-  // width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #fff;
-  border-top: 1px #ff0d69 solid;
-  padding-top: 10px;
 
+
+
+#navbox {
+  .current-menu-item a {
+    color: $pink;
+  }
+  .searchform {
+    float: right;
+    padding-right: 8px;
+    width: 160px;
+  }
+  text-align: center;
+  background-color: #fff;
+  border-top: 1px $pink solid;
+  padding-top: 10px;
   ul {
     text-align: center;
-
     li {
       float: left;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 1em;
       color: #444;
       text-align: center;
-
       a {
         padding: 4px 25px 3px 0;
         text-decoration: none;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 17px;
         color: #444;
-
-        & a:hover {
-          color: #ff0d69;
+        &:hover {
+          color: $pink;
         }
       }
     }
+    ul {
+      margin: 0;
+      margin-top: -3px;
+      padding: 0;
+      padding-bottom: 3px;
+      position: absolute;
+      left: -999em;
+      max-width: 128px;
+      min-width: 100px;
+      background-color: #fff;
+      border: 1px #999 solid;
+      border-radius: 0 0 8px;
+      .clearstick {
+        display: none;
+      }
+      li {
+        padding: 1px 2px;
+        a {
+          font-size: 1em;
+          font-weight: bold;
+        }
+      }
+    }
+
   }
+
 }
 
-#navbox ul ul {
-  margin: 0;
-  margin-top: -3px;
-  padding: 0;
-  padding-bottom: 3px;
-  position: absolute;
-  left: -999em;
-  max-width: 128px;
-  min-width: 100px;
-  background-color: #fff;
-  border: 1px #999 solid;
-  border-radius: 0 0 8px 0;
-}
 
-#navbox ul ul li {
-  // width: 100%;
-  padding: 1px 2px;
-}
 
-#navbox ul ul li a {
-  font-size: 1.0em;
-  font-weight: bold;
-}
 
-#navbox ul ul .clearstick {
-  display: none;
-}
+// #navbox ul li:hover ul {
+//   left: auto;
+// }
 
-#navbox ul li:hover ul {
-  left: auto;
-}
 
-#navbox .current-menu-item a {
-  color: #ff0d69;
-}
 
 .clearstick,
 .clearstick:hover {
@@ -591,11 +567,7 @@ form.searchform div {
   width: 160px;
 }
 
-#navbox .searchform {
-  float: right;
-  padding-right: 8px;
-  width: 160px;
-}
+
 
 .searchform .searchsubmit {
   background: #eee url('images/mglass.png') no-repeat scroll center center;
@@ -614,70 +586,46 @@ form.searchform div {
 
 /*Sidebar Styles */
 #sidebar {
-  float: right;
-  // width: 192px;
-  padding: 8px;
+  ul {
+    list-style-type: none;
+    list-style-image: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    font-family: verdana, Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    li {
+      padding-right: 10px;
+      padding-left: 10px;
+      margin-bottom: 15px;
+    }
+    ul {
+      list-style-type: none;
+      list-style-image: none;
+      li {
+        margin-bottom: 0;
+        text-decoration: none;
+        list-style-image: none;
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+
+  }
+  .widgettitle {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    border-bottom: 1px #234b7b solid;
+  }
 }
 
-#sidebar ul {
-  list-style-type: none;
-  list-style-image: none;
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
-  font-family: verdana, Helvetica, Arial, sans-serif;
-  font-size: 11px;
-}
 
-#sidebar ul li {
-  padding-right: 10px;
-  padding-left: 10px;
-  margin-bottom: 15px;
-}
 
-#sidebar ul li div,
-#sidebar ul li ul {
-  margin-top: 5px;
-}
 
-#sidebar ul ul {
-  list-style-type: none;
-  list-style-image: none;
-}
-
-#sidebar ul li ul li {
-  margin-bottom: 0;
-  text-decoration: none;
-  list-style-image: none;
-  padding-right: 0;
-  padding-left: 0;
-}
-
-#sidebar a,
-.postmetadata a {
-  border-style: none;
-}
-
-#sidebar a:link,
-.postmetadata a:hover {
-  /*color: #ed6a34;*/
-}
-
-#sidebar .widgettitle {
-  // width: 80%;
-  display: block;
-  font-family: Arial, Helvetica, sans-serif;
-  /*font-family: Georgia,serif;*/
-  ;
-  font-size: 16px;
-  /*text-transform: lowercase;  removed kf*/
-  font-weight: normal;
-  font-style: normal;
-  font-variant: normal;
-  border-bottom: 1px #234b7b solid;
-}
-
-/*Comment Template Styles */
 .commentpage {
   width: 100%;
 }
@@ -915,7 +863,7 @@ table.fpage {
 .fpagebox {
   background-color: #ff0d69;
   text-align: center;
-  color: white;
+  color: #fff;
 }
 
 .bdr-td {
@@ -924,32 +872,27 @@ table.fpage {
   height: 400px;
 }
 
-.home2 {
-  border-collapse: collapse;
-}
+.home-box {
+  .section-title {
+    background-color: $pink;
+    color: #fff;
+  }
 
-.home2 td {
-  border: 1px solid #ddd;
-  // width: 33%;
-}
-
-.home2a {
-  border-collapse: collapse;
-}
-
-.home2a td {
-  // width: 25%;
+  .btn {
+    background-color: $pink;
+    border-color: $pink;
+    color: #fff;
+  }
 }
 
 /*BUTTON HOMEPAGE*/
-.button.large {
+.button {
+  color: #fff;
   background: $pink;
-  background: -moz-linear-gradient(center top, $pink 0%, #f014c4 100%) repeat scroll 0 0 #f014c4;
+  border: 1px solid $pink;
   font-size: 12px;
-  border: 1px solid #f014c4;
-  color: #fff !important;
   border-radius: 4px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
   min-height: 43px;
   padding: 3px;
   text-align: center;
