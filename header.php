@@ -17,8 +17,18 @@ global $sa_settings;
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head  profile="http://gmpg.org/xfn/11">
   <title><?php bloginfo('name'); ?><?php wp_title(); ?></title>
-  <meta content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" http-equiv="Content-Type" />
+
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
   <meta name="p:domain_verify" content="2c7d06a99910a5abaa87885533e0c92d"/>
+
+
+
   <link href="<?php bloginfo('stylesheet_url'); ?>" media="screen" rel="stylesheet" type="text/css" />
 
   <?php if ($sa_settings['cf_custom_css'] != '') {
@@ -91,14 +101,14 @@ global $sa_settings;
 </div>
 
 <div class="row">
-  <div class="col-md-12 text-center">
+  <div class="col-md-12 text-center no-pad">
     <div class="product-top"><a href="http://oldfashionedmomstore.org/">New!!! Shop Old Fashioned Mom Products!!!</a></div>
 </div>
 </div>
 
 
 <div class="row">
-  <div class="col-md-12 text-center">
+  <div class="col-md-12 text-center no-pad">
      <div id="navbox">
 			<?php
         $margs = array(
@@ -111,7 +121,6 @@ global $sa_settings;
     </div>
     </div>
 
-<div id="navclearerTop"></div>
 
 
 <div class="row">
