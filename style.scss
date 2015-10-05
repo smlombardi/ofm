@@ -16,12 +16,16 @@ License: GNU General Public License v2.0 or newer
 License URI: http://www.gnu.org/licenses/gpl.html
 
 */
+
 // scss-lint:disable Comment, ImportantRule, NestingDepth
+
 /* DO NOT EDIT THIS CSS!  EDIT THE STYLES.SCSS FILE!!! IT WILL OVER-WRITE STYLES.CSS!!!  */
 
 
 
 $pink: #dc34ba;
+$pinkhover: darken($pink, 10%);
+$red: #be1c3e;
 
 a,
 a:hover {
@@ -194,6 +198,17 @@ img + a {
       padding: 6px;
     }
   }
+  .navigation a {
+    line-height: 30px;
+    font-size: 12px;
+  }
+  ol li {
+    font-size: 14px;
+    line-height: 22px;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
 }
 
 
@@ -443,7 +458,7 @@ p.hardfoot {
 }
 
 .wp-caption {
-  background-color: #eee;
+  background-color: #fff;
   border: 1px #ccc solid;
   text-align: center;
   padding-top: 5px;
@@ -457,11 +472,13 @@ p.hardfoot {
 
 .wp-caption-text {
   text-align: center;
-  font-size: 10px;
-  padding: 0;
-  margin: 0;
-  margin-top: 5px;
+  clear: both;
+  font-size: 13px;
+  padding: 10px 0 0;
+  margin: 5px 0 0;
+  line-height: 15px;
 }
+
 
 .comm {
   padding-left: 13px;
@@ -487,12 +504,11 @@ p.hardfoot {
 }
 
 
-
-
 #navbox {
   .current-menu-item a {
     color: $pink;
   }
+
   .searchform {
     float: right;
     padding-right: 8px;
@@ -510,6 +526,9 @@ p.hardfoot {
       font-size: 1em;
       color: #444;
       text-align: center;
+      &:first-child {
+         list-style-type: none;
+       }
       a {
         padding: 4px 25px 3px 0;
         text-decoration: none;
@@ -518,6 +537,9 @@ p.hardfoot {
         color: #444;
         &:hover {
           color: $pink;
+        }
+        &:last-child.clearstick {
+          display: none;
         }
       }
     }
@@ -634,20 +656,20 @@ form.searchform div {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  blockquote {
+    max-width: 390px;
+  }
 }
 
 .comment-author a {
-  color: #234B7B!important;
+  color: #234B7B !important;
   text-decoration: none;
 }
 
-.commentlist blockquote {
-  max-width: 390px;
-}
 
 .depth-2,
 .depth-4 {
-  background-color: #f1f1f1!important;
+  background-color: #f1f1f1 !important;
 }
 
 .comment,
@@ -664,20 +686,17 @@ form.searchform div {
 .comment-meta {
   font-size: 10px;
   margin-top: -7px;
-  /*font-family: Georgia,times,serif;*/
+  a {
+   color: #777 !important;
+   text-decoration: none;
+   &:hover {
+     text-decoration: none !important;
+   }
+ }
 }
 
-.comment-meta a {
-  color: #777!important;
-  text-decoration: none;
-}
-
-.comment-meta a:hover {
-  text-decoration: none!important;
-}
 
 #comment {
-  // width: 380px;
   height: 125px;
 }
 
@@ -689,8 +708,7 @@ form.searchform div {
 
 textarea#comment {
   font-size: 14px;
-  font-family: Arial, 'Helvetica LT Std', sans-serif;
-  // width: 400px;
+  font-family: Arial, sans-serif;
 }
 
 .navigation {
@@ -725,10 +743,7 @@ textarea#comment {
   background-image: url('images/right.png');
 }
 
-#content .navigation a {
-  line-height: 30px;
-  font-size: 12px;
-}
+
 
 .avatar {
   float: right;
@@ -761,19 +776,21 @@ textarea#comment {
   border-top: 1px #ddd dashed;
 }
 
-.bypostauthor {
+//
+// .widget ul li:first-child {
+//   border-top: 0;
+// }
 
-}
 
 /* BEGIN CATLIST STYLES */
 ul.lcp_catlist {
   margin: 0 0 0 -3px;
+  li {
+    list-style-type: none;
+  }
 }
 
-/* Removes the bullet points from lists */
-ul.lcp_catlist li {
-  list-style-type: none;
-}
+
 
 /* The following are all classes that modify how each component of the list looks. These classes must be specificed in the shortcode by first adding a tag around the component i.e. author_tag=span and then adding the class i.e. author_class=authorclass */
 span.titleclass {
@@ -806,7 +823,7 @@ span.thumbnailclass {
 /* END CSS FOR CUSTOM DISPLAY OF LIST CATEGORY POSTS */
 /*custom css from ylba */
 table.fpage {
-  border: 1px solid #ff0d69;
+  border: 1px solid $pink;
   border-collapse: collapse;
   font-size: 100%;
 }
@@ -825,7 +842,7 @@ table.fpage {
 .frontpage {
   /*background-color: #FF00FF;*/
   background-color: $pink;
-  color: white;
+  color: #fff;
   /*font-size: 100%;*/
   /*text-align: center;*/
 }
@@ -833,7 +850,7 @@ table.fpage {
 .frontpage-left {
   /*background-color: #FF00FF;*/
   background-color: $pink;
-  color: white;
+  color: #fff;
   border-left: 1px solid #ddd;
 }
 
@@ -857,11 +874,11 @@ table.fpage {
   float: left;
   // width: calc(33% - 10px);
   /*height:400px;*/
-  background-color: white;
+  background-color: #fff;
 }
 
 .fpagebox {
-  background-color: #ff0d69;
+  background-color: $pink;
   text-align: center;
   color: #fff;
 }
@@ -885,29 +902,6 @@ table.fpage {
   }
 }
 
-/*BUTTON HOMEPAGE*/
-.button {
-  color: #fff;
-  background: $pink;
-  border: 1px solid $pink;
-  font-size: 12px;
-  border-radius: 4px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-  min-height: 43px;
-  padding: 3px;
-  text-align: center;
-  text-shadow: 0 1px 0 #f014c4;
-  text-transform: uppercase;
-  display: inline;
-  text-decoration: none;
-}
-
-.button:hover {
-  background: -moz-linear-gradient(center top, #f014c4 0%, $pink 100%) repeat scroll 0 0 $pink;
-  border: 1px solid #f014c4;
-  color: #f5e9f3 !important;
-  text-decoration: none !important;
-}
 
 .goudyitalic {
   font-family: Goudy Old Style, Garamond, Big Caslon, Times New Roman, serif;
@@ -924,23 +918,21 @@ table.fpage {
   // width: 300px;
 }
 
-#navbox ul li a:last child.clearstick {
-  display: none;
-}
+
 
 li#menu-item-328.clearstick {
-  display: none!important;
+  display: none !important;
 }
 
 .cities-top {
-  font-family: 'Apple Chancery'!important;
+  font-family: 'Apple Chancery' !important;
   font-size: 18px;
   padding: 0 0 5px 10px;
   color: #000265;
 }
 
 .red-top {
-  color: #e3171a;
+  color: $red;
 }
 
 .menu-secondary-container {
@@ -950,19 +942,17 @@ li#menu-item-328.clearstick {
 
 #navclearerTop {
   clear: both;
-  border-bottom: 0 solid #ff0d69;
+  border-bottom: 0 solid $pink;
   height: 10px;
   background-color: #fff;
 }
 
-#navbox li:first-child {
-  list-style-type: none;
-}
+
 
 .product-top {
   font-family: 'Apple Chancery', Georgia, serif !important;
   font-size: 25px;
-  border-top: 1px solid #ff0d69;
+  border-top: 1px solid $pink;
   padding: 10px 0;
   color: #000265;
   font-style: italic;
@@ -971,7 +961,7 @@ li#menu-item-328.clearstick {
     color: $pink;
     text-decoration: none;
     &:hover {
-      color: #ff0d69;
+      color: $pinkhover;
     }
   }
 }
@@ -980,9 +970,6 @@ li#menu-item-328.clearstick {
 
 /* was added as extra css in theme settings */
 /*For mailchimp button*/
-.yks-mailchimpFormDivSubmit {
-  // width: 50%!important;
-}
 
 .yks-mailchimpFormDivSubmit {
   margin-top: -15px !important;
@@ -993,14 +980,7 @@ li#menu-item-328.clearstick {
   clear: both;
 }
 
-.wp-caption-text {
-  clear: both;
-  font-size: 13px!important;
-  padding: 10px 0 0;
-  margin: 0;
-  text-align: left;
-  line-height: 15px!important;
-}
+
 
 .postid-1205 .wp-caption-text {
   text-align: center;
@@ -1051,28 +1031,13 @@ li#menu-item-328.clearstick {
   display: none;
 }
 
-.widget li {
-  // width: auto;
-}
 
-.widget ul li:first-child {
-  border-top: none;
-}
 
-.wp-caption {
-  background-color: #fff!important;
-}
 
 .postid-2184 img.alignright {
   margin-left: 90px;
 }
 
-#content ol li {
-  font-size: 14px;
-  line-height: 22px;
-  text-align: left;
-  margin-bottom: 10px;
-}
 
 .archive .wp-post-image {
   display: none;
