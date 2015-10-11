@@ -45,6 +45,12 @@ require_once $functions_path.'options.php';
 
 //END New options page
 
+function custom_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+
 
 // Remove the links to the extra feeds such as category feeds if chosen
 
@@ -80,14 +86,13 @@ add_theme_support('automatic-feed-links');
 
 add_custom_background();
 
-//Changes the excerpt "read more" link to a raquo
 
-    function new_excerpt_more($more)
-    {
-        global $post;
+function new_excerpt_more($more)
+{
+    global $post;
 
-        return '...<a href="'.get_permalink($post->ID).'">&raquo;</a>';
-    }
+    return '...<a class="read-more" href="'.get_permalink($post->ID).'">Read More&nbsp;&raquo;</a>';
+}
 
 add_filter('excerpt_more', 'new_excerpt_more');
 
@@ -123,35 +128,35 @@ if (!is_admin()) { // instruction to only load if it is not the admin area
 
    // cufon scripts
 
-   wp_register_script('cufon',
-
-       get_template_directory_uri().'/cufon/cufon-yui.js',
-
-       array('jquery'),
-
-       '1.0');
-
-    wp_enqueue_script('cufon');
-
-    wp_register_script('cufon-font',
-
-       get_template_directory_uri().'/cufon/Superclarendon_Rg_700.font.js',
-
-       array('cufon'),
-
-       '1.0');
-
-    wp_enqueue_script('cufon-font');
-
-    wp_register_script('cufon-load',
-
-       get_template_directory_uri().'/cufon/cufon-load.js',
-
-       array('cufon'),
-
-       '1.0');
-
-    wp_enqueue_script('cufon-load');
+  //  wp_register_script('cufon',
+   //
+  //      get_template_directory_uri().'/cufon/cufon-yui.js',
+   //
+  //      array('jquery'),
+   //
+  //      '1.0');
+   //
+  //   wp_enqueue_script('cufon');
+   //
+  //   wp_register_script('cufon-font',
+   //
+  //      get_template_directory_uri().'/cufon/Superclarendon_Rg_700.font.js',
+   //
+  //      array('cufon'),
+   //
+  //      '1.0');
+   //
+  //   wp_enqueue_script('cufon-font');
+   //
+  //   wp_register_script('cufon-load',
+   //
+  //      get_template_directory_uri().'/cufon/cufon-load.js',
+   //
+  //      array('cufon'),
+   //
+  //      '1.0');
+   //
+  //   wp_enqueue_script('cufon-load');
 
    // Collapser script
 
@@ -169,25 +174,22 @@ if (!is_admin()) { // instruction to only load if it is not the admin area
 }
 
 
-// for loading Bootstrap, welcome to the 21st century
-function my_bootstrap_theme_scripts() {
-  wp_register_script( 'bootstrap-js', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.0.1', true );
-  wp_register_style( 'bootstrap-css', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css', array(), '3.0.1', 'all' );
+function my_foundation_theme_scripts() {
+  wp_register_script( 'foundation-js', get_template_directory_uri() . '/foundation/js/foundation.min.js');
+  wp_register_style( 'foundation-css', get_template_directory_uri() . '/foundation/css/foundation.css' );
+  wp_register_style( 'main-css', get_template_directory_uri() . '/style.css' );
 
-  wp_enqueue_script( 'bootstrap-js' );
-  wp_enqueue_style( 'bootstrap-css' );
+  wp_enqueue_script( 'foundation-js' );
+  wp_enqueue_style( 'foundation-css' );
+  wp_enqueue_style( 'foundation-css' );
+  wp_enqueue_style( 'main-css' );
 
   if ( is_singular() && comments_open() && get_option('thread_comments') )
     wp_enqueue_script( 'comment-reply');
 
 }
 
-add_action('wp_enqueue_scripts', 'my_bootstrap_theme_scripts');
-
-
-
-
-
+add_action('wp_enqueue_scripts', 'my_foundation_theme_scripts');
 
 
 
@@ -219,6 +221,12 @@ add_action('after_setup_theme', 'woocommerce_support');
 function woocommerce_support()
 {
     add_theme_support('woocommerce');
+}
+
+
+add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
+function wpdocs_theme_setup() {
+    add_image_size( 'category-thumb', 300, 300, true ); // 300 pixels wide (and unlimited height)
 }
 
 /* Disable Related products on single product pages */
@@ -271,30 +279,22 @@ class WP_Widget_Recent_Posts_Exclude extends WP_Widget
         $exclude = empty($instance['exclude']) ? '' : $instance['exclude'];
 
         $r = new WP_Query(array('posts_per_page' => $number, 'no_found_rows' => true, 'post_status' => 'publish', 'ignore_sticky_posts' => true, 'category__not_in' => explode(',', $exclude)));
-        if ($r->have_posts()) :
-?>
+        if ($r->have_posts()) : ?>
                 <?php //echo print_r(explode(',', $exclude)); ?>
-                <?php echo $before_widget;
-        ?>
+                <?php echo $before_widget;  ?>
                 <?php if ($title) {
     echo $before_title.$title.$after_title;
-}
-        ?>
+}  ?>
                 <ul>
-                <?php  while ($r->have_posts()) : $r->the_post();
-        ?>
-                <li><a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID());
-        ?>"><?php if (get_the_title()) {
+                <?php  while ($r->have_posts()) : $r->the_post();  ?>
+                <li><a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID());  ?>"><?php if (get_the_title()) {
     the_title();
 } else {
     the_ID();
-}
-        ?></a></li>
-                <?php endwhile;
-        ?>
+}  ?></a></li>
+                <?php endwhile;  ?>
                 </ul>
-                <?php echo $after_widget;
-        ?>
+                <?php echo $after_widget;  ?>
 <?php
                 // Reset the global $the_post as this query will have stomped on it
                 wp_reset_postdata();
@@ -330,35 +330,18 @@ class WP_Widget_Recent_Posts_Exclude extends WP_Widget
     {
         $title = isset($instance['title']) ? esc_attr($instance['title']) : '';
         $number = isset($instance['number']) ? absint($instance['number']) : 5;
-        $exclude = esc_attr($instance['exclude']);
-        ?>
-                <p><label for="<?php echo $this->get_field_id('title');
-        ?>"><?php _e('Title:');
-        ?></label>
-                <input class="widefat" id="<?php echo $this->get_field_id('title');
-        ?>" name="<?php echo $this->get_field_name('title');
-        ?>" type="text" value="<?php echo $title;
-        ?>" /></p>
+        $exclude = esc_attr($instance['exclude']);  ?>
+        <p><label for="<?php echo $this->get_field_id('title');  ?>"><?php _e('Title:');  ?></label>
+        <input class="widefat" id="<?php echo $this->get_field_id('title');  ?>" name="<?php echo $this->get_field_name('title');  ?>" type="text" value="<?php echo $title;  ?>" /></p>
 
-                <p><label for="<?php echo $this->get_field_id('number');
-        ?>"><?php _e('Number of posts to show:');
-        ?></label>
-                <input id="<?php echo $this->get_field_id('number');
-        ?>" name="<?php echo $this->get_field_name('number');
-        ?>" type="text" value="<?php echo $number;
-        ?>" size="3" /></p>
+        <p><label for="<?php echo $this->get_field_id('number');  ?>"><?php _e('Number of posts to show:');  ?></label>
+        <input id="<?php echo $this->get_field_id('number');  ?>" name="<?php echo $this->get_field_name('number');  ?>" type="text" value="<?php echo $number;  ?>" size="3" /></p>
 
-                <p>
-                        <label for="<?php echo $this->get_field_id('exclude');
-        ?>"><?php _e('Exclude Category(s):');
-        ?></label> <input type="text" value="<?php echo $exclude;
-        ?>" name="<?php echo $this->get_field_name('exclude');
-        ?>" id="<?php echo $this->get_field_id('exclude');
-        ?>" class="widefat" />
-                        <br />
-                        <small><?php _e('Category IDs, separated by commas.');
-        ?></small>
-                </p>
+        <p>
+          <label for="<?php echo $this->get_field_id('exclude');  ?>"><?php _e('Exclude Category(s):');  ?></label> <input type="text" value="<?php echo $exclude;  ?>" name="<?php echo $this->get_field_name('exclude');  ?>" id="<?php echo $this->get_field_id('exclude');  ?>" class="widefat" />
+          <br />
+          <small><?php _e('Category IDs, separated by commas.');  ?></small>
+        </p>
 <?php
 
     }

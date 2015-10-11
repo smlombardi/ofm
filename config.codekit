@@ -242,6 +242,143 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/foundation\/css\/foundation.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/foundation\/css\/foundation.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/foundation\/css\/foundation.min.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/foundation\/css\/foundation.min.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/foundation\/css\/normalize.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/foundation\/css\/normalize.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/foundation\/js\/foundation.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/foundation\/js\/foundation.min.js",
+		"outputAbbreviatedPath": "\/foundation\/js\/min\/foundation.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/foundation\/js\/foundation\/foundation.dropdown.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/foundation\/js\/foundation\/foundation.dropdown.js",
+		"outputAbbreviatedPath": "\/foundation\/js\/foundation\/min\/foundation.dropdown-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/foundation\/js\/foundation\/foundation.interchange.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/foundation\/js\/foundation\/foundation.interchange.js",
+		"outputAbbreviatedPath": "\/foundation\/js\/foundation\/min\/foundation.interchange-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/foundation\/js\/foundation\/foundation.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/foundation\/js\/foundation\/foundation.js",
+		"outputAbbreviatedPath": "\/foundation\/js\/foundation\/min\/foundation-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/foundation\/js\/foundation\/foundation.reveal.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/foundation\/js\/foundation\/foundation.reveal.js",
+		"outputAbbreviatedPath": "\/foundation\/js\/foundation\/min\/foundation.reveal-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/foundation\/js\/vendor\/fastclick.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/foundation\/js\/vendor\/fastclick.js",
+		"outputAbbreviatedPath": "\/foundation\/js\/vendor\/min\/fastclick-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/foundation\/js\/vendor\/jquery.cookie.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/foundation\/js\/vendor\/jquery.cookie.js",
+		"outputAbbreviatedPath": "\/foundation\/js\/vendor\/min\/jquery.cookie-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/foundation\/js\/vendor\/jquery.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/foundation\/js\/vendor\/jquery.js",
+		"outputAbbreviatedPath": "\/foundation\/js\/vendor\/min\/jquery-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/foundation\/js\/vendor\/modernizr.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/foundation\/js\/vendor\/modernizr.js",
+		"outputAbbreviatedPath": "\/foundation\/js\/vendor\/min\/modernizr-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/foundation\/js\/vendor\/placeholder.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/foundation\/js\/vendor\/placeholder.js",
+		"outputAbbreviatedPath": "\/foundation\/js\/vendor\/min\/placeholder-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/functions.php": {
 		"fileType": 8192,
 		"ignore": 0,
