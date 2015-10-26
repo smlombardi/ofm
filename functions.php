@@ -33,15 +33,13 @@ if (!isset($sa_settings)) {
     $sa_settings = get_option('sa_options'); //gets the current value of all the settings as stored in the db
 }
 
-//New options page
+// removed options page from UI.  It will only mess up new code
 
-if (is_admin()) {
-    $functions_path = TEMPLATEPATH.'/options/';
-
-//Theme Options
-
-require_once $functions_path.'options.php';
-}
+// if (is_admin()) {
+//     $functions_path = TEMPLATEPATH.'/options/';
+//   //Theme Options
+//   require_once $functions_path.'options.php';
+// }
 
 //END New options page
 
@@ -51,68 +49,56 @@ function custom_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 
-
 // Remove the links to the extra feeds such as category feeds if chosen
-
 if (get_option('cf_cleanfeedurls') != '') {
     remove_action('wp_head', 'feed_links_extra', 3);
 }
 
 //This will activate the widgetised sidebar and footer
-
 if (function_exists('register_sidebar')) {
     register_sidebar(array('name' => 'Sidebar'));
 }
 
     $args1 = array('name' => 'Footer-left','before_title' => '<h4 class="widgettitle">','after_title' => '</h4>');
-
     $args2 = array('name' => 'Footer-center','before_title' => '<h4 class="widgettitle">','after_title' => '</h4>');
-
     $args3 = array('name' => 'Footer-right','before_title' => '<h4 class="widgettitle">','after_title' => '</h4>');
 
     register_sidebar($args1);
-
     register_sidebar($args2);
-
     register_sidebar($args3);
 
-//Theme support for thumbnails and feed lnks
+    //Theme support for thumbnails and feed lnks
 
-add_theme_support('post-thumbnails');
+    add_theme_support('post-thumbnails');
+    add_theme_support('automatic-feed-links');
 
-add_theme_support('automatic-feed-links');
+    //allows for a custom background
+    //add_custom_background();
 
-//allows for a custom background
-
-add_custom_background();
+    function remove_customize_page(){
+    	global $submenu;
+    	unset($submenu['themes.php'][6]); // remove customize link
+    }
+    add_action( 'admin_menu', 'remove_customize_page');
 
 
 function new_excerpt_more($more)
 {
     global $post;
-
     return '...<a class="read-more" href="'.get_permalink($post->ID).'">Read More&nbsp;&raquo;</a>';
 }
 
 add_filter('excerpt_more', 'new_excerpt_more');
 
-// register three menus kf
-
       function register_menus()
       {
-          register_nav_menus(
-
-      array(
-
-      'header-menu' => __('Header Menu'),
-
-      'primary-menu' => __('Primary Menu'),
-
-      'secondary-menu' => __('Secondary Menu'),
-
-      )
-
-      );
+        register_nav_menus(
+          array(
+            'header-menu' => __('Header Menu'),
+            'primary-menu' => __('Primary Menu'),
+            'secondary-menu' => __('Secondary Menu')
+          )
+        );
       }
 
       add_action('init', 'register_menus');
@@ -125,51 +111,12 @@ if (!is_admin()) { // instruction to only load if it is not the admin area
 
   wp_enqueue_script('jquery-js');
 
-
-   // cufon scripts
-
-  //  wp_register_script('cufon',
-   //
-  //      get_template_directory_uri().'/cufon/cufon-yui.js',
-   //
-  //      array('jquery'),
-   //
-  //      '1.0');
-   //
-  //   wp_enqueue_script('cufon');
-   //
-  //   wp_register_script('cufon-font',
-   //
-  //      get_template_directory_uri().'/cufon/Superclarendon_Rg_700.font.js',
-   //
-  //      array('cufon'),
-   //
-  //      '1.0');
-   //
-  //   wp_enqueue_script('cufon-font');
-   //
-  //   wp_register_script('cufon-load',
-   //
-  //      get_template_directory_uri().'/cufon/cufon-load.js',
-   //
-  //      array('cufon'),
-   //
-  //      '1.0');
-   //
-  //   wp_enqueue_script('cufon-load');
-
-   // Collapser script
-
+  // Collapser script
    wp_register_script('collapser',
 
-       get_template_directory_uri().'/js/collapser.js',
-
-       array('jquery'),
-
-       '1.0');
+   get_template_directory_uri().'/js/collapser.js', array('jquery'), '1.0');
 
    // enqueue the script
-
    wp_enqueue_script('collapser');
 }
 
@@ -177,11 +124,13 @@ if (!is_admin()) { // instruction to only load if it is not the admin area
 function my_foundation_theme_scripts() {
   wp_register_script( 'foundation-js', get_template_directory_uri() . '/foundation/js/foundation.min.js');
   wp_register_style( 'foundation-css', get_template_directory_uri() . '/foundation/css/foundation.css' );
+  wp_register_style( 'google-font', 'https://fonts.googleapis.com/css?family=Quintessential' );
   wp_register_style( 'main-css', get_template_directory_uri() . '/style.css' );
 
   wp_enqueue_script( 'foundation-js' );
   wp_enqueue_style( 'foundation-css' );
   wp_enqueue_style( 'foundation-css' );
+  wp_enqueue_style( 'google-font' );
   wp_enqueue_style( 'main-css' );
 
   if ( is_singular() && comments_open() && get_option('thread_comments') )
@@ -190,8 +139,6 @@ function my_foundation_theme_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'my_foundation_theme_scripts');
-
-
 
 
 //Loads an old comments.php file if wordpress does not support the new comment methods
@@ -226,7 +173,7 @@ function woocommerce_support()
 
 add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
 function wpdocs_theme_setup() {
-    add_image_size( 'category-thumb', 300, 300, true ); // 300 pixels wide (and unlimited height)
+    add_image_size( 'home-square', 350, 350, array( 'left', 'top' ) ); // 300 pixels wide (and unlimited height)
 }
 
 /* Disable Related products on single product pages */
@@ -280,24 +227,24 @@ class WP_Widget_Recent_Posts_Exclude extends WP_Widget
 
         $r = new WP_Query(array('posts_per_page' => $number, 'no_found_rows' => true, 'post_status' => 'publish', 'ignore_sticky_posts' => true, 'category__not_in' => explode(',', $exclude)));
         if ($r->have_posts()) : ?>
-                <?php //echo print_r(explode(',', $exclude)); ?>
-                <?php echo $before_widget;  ?>
-                <?php if ($title) {
-    echo $before_title.$title.$after_title;
-}  ?>
-                <ul>
-                <?php  while ($r->have_posts()) : $r->the_post();  ?>
-                <li><a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID());  ?>"><?php if (get_the_title()) {
-    the_title();
-} else {
-    the_ID();
-}  ?></a></li>
-                <?php endwhile;  ?>
-                </ul>
-                <?php echo $after_widget;  ?>
-<?php
-                // Reset the global $the_post as this query will have stomped on it
-                wp_reset_postdata();
+        <?php //echo print_r(explode(',', $exclude)); ?>
+        <?php echo $before_widget;  ?>
+        <?php if ($title) {
+            echo $before_title.$title.$after_title;
+            }  ?>
+            <ul>
+            <?php  while ($r->have_posts()) : $r->the_post();  ?>
+            <li><a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID());  ?>"><?php if (get_the_title()) {
+                the_title();
+            } else {
+                the_ID();
+            }  ?></a></li>
+        <?php endwhile;  ?>
+        </ul>
+        <?php echo $after_widget;  ?>
+      <?php
+        // Reset the global $the_post as this query will have stomped on it
+        wp_reset_postdata();
 
         endif;
 
@@ -346,6 +293,9 @@ class WP_Widget_Recent_Posts_Exclude extends WP_Widget
 
     }
 }
+
+
+
 
 function WP_Widget_Recent_Posts_Exclude_init()
 {
