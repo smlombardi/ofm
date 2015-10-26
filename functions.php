@@ -124,13 +124,13 @@ if (!is_admin()) { // instruction to only load if it is not the admin area
 function my_foundation_theme_scripts() {
   wp_register_script( 'foundation-js', get_template_directory_uri() . '/foundation/js/foundation.min.js');
   wp_register_style( 'foundation-css', get_template_directory_uri() . '/foundation/css/foundation.css' );
-  wp_register_style( 'google-font', 'https://fonts.googleapis.com/css?family=Quintessential' );
+//  wp_register_style( 'google-font', 'https://fonts.googleapis.com/css?family=Quintessential' );
   wp_register_style( 'main-css', get_template_directory_uri() . '/style.css' );
 
   wp_enqueue_script( 'foundation-js' );
   wp_enqueue_style( 'foundation-css' );
   wp_enqueue_style( 'foundation-css' );
-  wp_enqueue_style( 'google-font' );
+//  wp_enqueue_style( 'google-font' );
   wp_enqueue_style( 'main-css' );
 
   if ( is_singular() && comments_open() && get_option('thread_comments') )

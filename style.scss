@@ -234,7 +234,6 @@ img + a {
   color: #333;
   font-size: 14px;
 }
-
  .entry img {
 //   border: 0 #ccc solid;
    max-width: 100% !important;
@@ -389,24 +388,25 @@ p.hardfoot {
 
 /*Post Styles */
 .post {
-  border-bottom: 1px #333 dashed;
-  margin-bottom: 20px;
+  // border-bottom: 1px #333 dashed;
+  // margin-bottom: 20px;
 }
 .posthead {
-  min-height: 48px;
-  clear: both;
   h2 a {
     font-family: helvetica, arial, sans-serif;
     font-weight: normal;
-    text-decoration: none !important;
     color: #234b7b;
-    font-size: 20px;
+    font-size: 16px;
     border-bottom: 1px #ccc solid;
     display: block;
     &:hover {
       border-color: #7591af;
-      text-decoration: none !important;
     }
+  }
+  .date {
+    font-style: italic;
+    font-size: 12px;
+    font-weight: bold;
   }
 }
 .postauthor {
@@ -544,7 +544,6 @@ p.hardfoot {
   //background: #eee url("images/mglass.png") no-repeat scroll center center;
   //text-indent: -9999em;
   margin-top: 5px;
-
   height: 25px;
   line-height: 1;
   border-radius: 3px;
@@ -560,6 +559,7 @@ p.hardfoot {
   border-radius: 0;
   // border-right-style: none;
   background-color: #eee;
+  margin-bottom: 0;
 }
 
 /*Sidebar Styles */
@@ -954,10 +954,17 @@ li#menu-item-328.clearstick {
 .postid-2184 img.alignright {
   margin-left: 90px;
 }
-.archive .wp-post-image {
-  display: none;
-}
+
 .read-more {
   color: $pink;
   font-size: 12px;
+}
+
+// constant contact overrides
+#ctct_button_footer {
+  margin-top: 0 !important;
+}
+#text-11 a.button {
+  margin-bottom: 5px;
+  margin-top: 20px;
 }
