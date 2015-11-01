@@ -83,14 +83,15 @@
   </div>
 
 
+<!-- they were using 2 menu slots to make one menu? -->
 
-<div class="row">
+<!-- <div class="row">
   <div class="medium-12 columns text-center no-pad">
     <div class="navbox secondary">
         <?php wp_nav_menu(array('theme_location' => 'secondary-menu')); ?>
     </div>
   </div>
-</div>
+</div> -->
 
 
 </header>

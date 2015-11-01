@@ -24,6 +24,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
 $pink: #dc34ba;
 $pinkhover: darken($pink, 10%);
 $red: #be1c3e;
+$darkblue: #010069;
 
 //fonts
 $sans: Helvetica, Arial, sans-serif;
@@ -110,10 +111,9 @@ header {
   background-color: #fff;
   border-top: 1px $pink solid;
   padding: 10px 0;
-  &.secondary {
     border-bottom: 1px $pink solid;
   margin-bottom: 30px;
-  }
+
   .current-menu-item a {
     color: $pink;
   }
@@ -123,18 +123,16 @@ header {
     width: 160px;
   }
   ul {
-    text-align: center;
+    text-align: center; //centered list
     li {
-      float: left;
       font-family: $sans;
+      display: inline-block; // for a centered list
       font-size: 1em;
       color: #444;
       text-align: center;
-      &:first-child {
         list-style-type: none;
-      }
       a {
-        padding: 4px 25px 3px 0;
+        padding: 4px 10px 3px;
         text-decoration: none;
         font-family: $sans;
         font-size: 17px;
@@ -142,9 +140,13 @@ header {
         &:hover {
           color: $pink;
         }
-        &:last-child.clearstick {
-          display: none;
-        }
+      }
+      &:after {
+        content: '\25C6';
+        color: $red;
+      }
+      &:last-child:after {
+        content: '';
       }
     }
     ul {
@@ -198,12 +200,16 @@ h4,
 h5,
 h6 {
   font-family: helvetica, arial, sans-serif;
-  color: #234b7b;
+  color: $darkblue;
+  font-weight: bold;
 }
 h2 {
   font-size: 30px;
   text-align: left;
 }
+
+
+
 p,
 #content ul li,
 #content ol li {
@@ -395,8 +401,8 @@ p.hardfoot {
   h2 a {
     font-family: helvetica, arial, sans-serif;
     font-weight: normal;
-    color: #234b7b;
-    font-size: 16px;
+    color: $pink;
+    font-size: 15px;
     border-bottom: 1px #ccc solid;
     display: block;
     &:hover {
