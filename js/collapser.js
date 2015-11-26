@@ -1,4 +1,3 @@
-﻿
 var $j = jQuery.noConflict();
 $j(document).ready(function() {
   $j('#sidebar .widget h2').click(function() {

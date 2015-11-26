@@ -7,7 +7,7 @@
 
 
 
-<div id="sidebar" class="col-md-2">
+<div id="sidebar" class="medium-2 columns">
 
 <ul>
 
