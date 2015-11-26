@@ -19,6 +19,8 @@ License URI: http://www.gnu.org/licenses/gpl.html
 // scss-lint:disable Comment, ImportantRule, NestingDepth
 /* DO NOT EDIT THIS CSS!  EDIT THE STYLES.SCSS FILE!!! IT WILL OVER-WRITE STYLES.CSS!!!  */
 @import 'clearfix';
+@import 'breakpoints';
+@import 'helpers';
 
 //colors
 $pink: #dc34ba;
@@ -109,8 +111,38 @@ h1.video-title {
   text-align: center;
   font-family: Lora;
   font-weight: normal;
-  font-size: 26px;
+  font-size: 1.1em;
   color: $pink;
+  .home & {
+    font-size: 18px;
+  }
+  @include breakpoint(baby-bear) {
+    font-size: 1.2em;
+  }
+
+}
+.video {
+
+  margin-bottom: 20px;
+}
+.view-all-episodes {
+  font-family: lora, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+.video-caption p {
+  padding: 5px 10%;
+  @include breakpoint(baby-bear) {
+    padding: 0;
+  }
+}
+.page-template-page-shows {
+  h4 {
+  font-size: 19px;
+  }
+  img, iframe {
+    max-width: 100%;
+  }
 }
 
 
@@ -211,10 +243,15 @@ h6 {
   font-family: Lora, helvetica, arial, sans-serif;
   color: $darkblue;
   font-weight: 400;
+  text-align: left;
 }
 h2 {
   font-size: 30px;
   text-align: left;
+}
+
+h1 {
+  font-size: 2em;
 }
 
 
@@ -825,7 +862,7 @@ table.fpage {
 .home-box {
   .section-title {
     background-color: $pink;
-    font-family: Lora, helvetica, arial, sans-serif;  
+    font-family: Lora, helvetica, arial, sans-serif;
     font-size: 18px;
     font-weight: 400;
     color: #fff;

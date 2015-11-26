@@ -1,0 +1,15 @@
+// for vertical spacing, add to elements
+$spacers: (xs: 10px,sm: 20px, md: 30px, lg: 40px, xl: 50px);
+$directions: (top, bottom);
+
+// added smartphone MQ, reduced each spacer size to 75% for that
+@each $direction in $directions {
+  @each $spacer, $amt in $spacers {
+    .spacer-#{$direction}-#{$spacer} {
+      margin-#{$direction}: $amt;
+      @media only screen and (max-device-width: 480px) {
+        margin-#{$direction}: 0.75 * $amt;
+      }
+    }
+  }
+}

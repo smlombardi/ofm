@@ -27,7 +27,7 @@ get_header();?>
 				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:'), 'after' => '</div>' ) ); ?>
 			</div>
 			<p class="postmetadata">
-			<span class="cat">Posted in <?php the_category(', ') ?></span>
+			<!--<span class="cat">Posted in <?php the_category(', ') ?></span>-->
       
       
 			<?php edit_post_link('Edit', '&nbsp;|&nbsp;', ''); ?>
