@@ -124,7 +124,7 @@ if (!is_admin()) { // instruction to only load if it is not the admin area
 function my_foundation_theme_scripts() {
   wp_register_script( 'foundation-js', get_template_directory_uri() . '/foundation/js/foundation.min.js');
   wp_register_style( 'foundation-css', get_template_directory_uri() . '/foundation/css/foundation.css' );
-  wp_register_style( 'google-font', 'https://fonts.googleapis.com/css?family=Sail' );
+  wp_register_style( 'google-font', 'https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' );
   wp_register_style( 'main-css', get_template_directory_uri() . '/style.css' );
 
   wp_enqueue_script( 'foundation-js' );
@@ -152,6 +152,34 @@ function legacy_comments($file)
 
     return $file;
 }
+
+
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+	register_post_type( video,
+		array(
+			'labels' => array(
+				'name' => __( 'Videos' ),
+				'singular_name' => __( 'Video' ),
+				'add_new' => _x('Add Video', 'videos'),
+				'add_new_item' => __('Add Video'),
+				'edit' => _x('Edit Videos', 'Videos'),
+				'edit_item' => __('Edit Video'),
+				'new_item' => __('New Video'),
+				'view' => _x('View Video', 'videos'),
+				'view_item' => __('View Video')
+			),
+		'menu_icon' => 'dashicons-video-alt3',
+		'public' => true,
+		'has_archive' => true,
+		'menu_position' => 5,
+		'supports' => array('title','editor','thumbnail', 'excerpt'),
+		'capability_type' => 'page',
+		'map_meta_cap' => true
+		)
+	);
+};
+
 
 //sets the content width global variable
 

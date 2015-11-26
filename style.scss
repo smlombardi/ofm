@@ -105,6 +105,15 @@ header {
   }
 }
 
+h1.video-title {
+  text-align: center;
+  font-family: Lora;
+  font-weight: normal;
+  font-size: 26px;
+  color: $pink;
+}
+
+
 // ----
 .navbox {
   text-align: center;
@@ -199,9 +208,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: helvetica, arial, sans-serif;
+  font-family: Lora, helvetica, arial, sans-serif;
   color: $darkblue;
-  font-weight: bold;
+  font-weight: 400;
 }
 h2 {
   font-size: 30px;
@@ -816,10 +825,12 @@ table.fpage {
 .home-box {
   .section-title {
     background-color: $pink;
+    font-family: Lora, helvetica, arial, sans-serif;  
+    font-size: 18px;
+    font-weight: 400;
     color: #fff;
     padding: 5px;
     margin-bottom: 10px;
-    font-size: 16px;
     a {
       color: #fff;
     }

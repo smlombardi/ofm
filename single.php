@@ -27,9 +27,9 @@ get_header();?>
 				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:'), 'after' => '</div>' ) ); ?>
 			</div>
 			<p class="postmetadata">
-			<span class="cat">Posted in <?php the_category(', ') ?></span><!-- |
-			 ***** restore this line if comments are needed *****
-			<span class="comm"><?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?></span> -->
+			<span class="cat">Posted in <?php the_category(', ') ?></span>
+      
+      
 			<?php edit_post_link('Edit', '&nbsp;|&nbsp;', ''); ?>
 			<?php if ($sa_settings['cf_hidetags'] == '') { the_tags('<br /><span class="tags">Tags: ',', ', '</span>'); } ?>
 			</p>
