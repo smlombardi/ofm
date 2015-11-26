@@ -11,21 +11,21 @@ get_header();?>
 		<?php the_content(); ?>
 <?php endwhile; ?>
 	<!-- end page content -->
-  
+
  <!-- videos (2 most recent) -->
  <?php
     $args = array( 'post_type' => 'video', 'posts_per_page' => 2, 'orderby' => 'date', 'order' => 'DESC' );
     $loop = new WP_Query( $args ); ?>
- 
+
     <div class="row">
       <div class="small-12 columns text-center">
         <img src="<?php bloginfo(stylesheet_directory); ?>/images/ofm-500.png"/>
       </div>
     </div>
- 
+
     <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-    
- 
+
+
     <div class="row">
     <div class="video small-12 columns text-center">
       <h1 class="video-title"><?php the_title(); ?></h1>
@@ -34,9 +34,9 @@ get_header();?>
       <img src="<?php bloginfo(stylesheet_directory); ?>/images/horizontal-element.jpg"/>
     </div>
     </div>
-   
 
-<?php endwhile;  ?>  
+
+<?php endwhile;  ?>
 <!-- end the loop -->
 <div class="row">
   <div class="small-12 columns text-center">
@@ -65,7 +65,7 @@ get_header();?>
 			</div>
 				<? if ( has_post_thumbnail() ) { ?>
 			<div class="image">
-				<? the_post_thumbnail('home-square'); ?>
+				<a href="<?php the_permalink(); ?>"><? the_post_thumbnail('home-square'); ?></a>
 			</div>
 			<?	} ?>
 			<p class="link"><a href="<?php the_permalink(); ?>"><?php the_title() ; ?></a></p>

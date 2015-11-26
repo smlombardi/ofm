@@ -254,6 +254,13 @@ h1 {
   font-size: 2em;
 }
 
+.category .posthead {
+  min-height: 70px;
+  @include breakpoint(baby-bear) {
+    min-height: 0;
+  }
+}
+
 
 
 p,

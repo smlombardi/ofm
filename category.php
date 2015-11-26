@@ -49,7 +49,7 @@ get_header();?>
 		      <div class="entry">
             <? if ( has_post_thumbnail() ) { ?>
     			<div class="image">
-    				<? the_post_thumbnail('home-square'); ?>
+    				<a href="<?php the_permalink(); ?>"><? the_post_thumbnail('home-square'); ?></a>
     			</div>
     			<?	} ?>
 
