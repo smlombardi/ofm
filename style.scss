@@ -254,13 +254,13 @@ h1 {
   font-size: 2em;
 }
 
-.category .posthead {
-  min-height: 70px;
-  @include breakpoint(baby-bear) {
-    min-height: 0;
-  }
-}
-
+// .category .posthead {
+//   min-height: 70px;
+//   @include breakpoint(baby-bear) {
+//     min-height: 0;
+//   }
+// }
+//
 
 
 p,
@@ -452,17 +452,16 @@ p.hardfoot {
 }
 .posthead {
   h2 a {
+    line-height: 1.33;
     font-family: helvetica, arial, sans-serif;
+    font-size: 15px;
     font-weight: normal;
     color: $pink;
-    font-size: 15px;
-    border-bottom: 1px #ccc solid;
     display: block;
-    &:hover {
-      border-color: #7591af;
-    }
   }
   .date {
+    border-top: 1px #eee solid;
+    padding-top: 5px;
     font-style: italic;
     font-size: 12px;
     font-weight: bold;

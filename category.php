@@ -33,17 +33,8 @@ get_header();?>
 
 		  <li>
 		    <div class="post">
-		    <div class="posthead">
-		    <!-- <div class="dater">
 
-		    <p class="day"><a href="<?php the_permalink(); ?>" ><?php the_time('j'); ?></a></p>
-		    <p class="monthyear"><a href="<?php the_permalink(); ?>" ><?php the_time('M y'); ?></a></p>
-		    </div> -->
 
-		      <h2 class="cat-post-head"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-		          <p class="date"><?php the_date(); ?></p>
-
-		      </div>
 
 
 		      <div class="entry">
@@ -52,6 +43,11 @@ get_header();?>
     				<a href="<?php the_permalink(); ?>"><? the_post_thumbnail('home-square'); ?></a>
     			</div>
     			<?	} ?>
+
+          <div class="posthead">
+          <h2 class="cat-post-head"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+              <p class="date"><?php the_date(); ?></p>
+          </div>
 
 
 		        <?php the_excerpt('Read More &raquo;'); ?>

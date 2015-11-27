@@ -75,6 +75,28 @@ get_header();?>
 		<?php endwhile;  ?>  <!-- end the loop -->
 <?php } ; ?> <!-- end foreach -->
 
+<li class="home-box">
+	<div class="section-title">
+		<a href="http://oldfashionedmomstore.org/">OFM Products</a>
+	</div>
+	<div class="image">
+		<a href="http://oldfashionedmomstore.org/"><img src="/wp-content/uploads/2015/11/pink-grapefruit-marmalade-sugar-scrub-3jar.jpg" alt="Old Fashioned Mom Pink Grapefruit Marmalade Sugar Scrub" /></a>
+	</div>
+			<p class="link"><a href="http://www.oldfashionedmom.org/janeiros-bursting-america/">Old Fashioned Mom Pink Grapefruit Marmalade Sugar Scrub!!</a></p>
+	<div class="excerpt"><p>Buy now!</p></div>
+</li>
+
+<li class="home-box">
+	<div class="section-title">
+		<a href="/ofm-event/">OFM Special Event</a>
+	</div>
+	<div class="image">
+		<a href="/ofm-event/"><img src="/wp-content/uploads/2015/11/image1431.jpg" alt="" /></a>
+	</div>
+			<p class="link"><a href="/ofm-event/">Holiday Shopping Extravaganza</a></p>
+	<div class="excerpt"><p>Benefitting the Children's Home of Poughkeepise. Thursday, December 10<br>5-8pm <a href="/ofm-event/">Click for details!</a></p></div>
+</li>
+
 
 </ul>
 
