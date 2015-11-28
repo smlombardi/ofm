@@ -791,13 +791,16 @@ table.fpage {
   .section-title {
     background-color: $pink;
     font-family: Lora, helvetica, arial, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     color: #fff;
     padding: 5px;
     margin-bottom: 10px;
     a {
       color: #fff;
+    }
+    @include breakpoint(mama-bear) {
+      font-size: 14px;
     }
   }
   .image {
