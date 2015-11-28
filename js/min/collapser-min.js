@@ -1,1 +1,0 @@
-var $j=jQuery.noConflict();$j(document).ready(function(){$j("#sidebar .widget h2").click(function(){var e=$j(this).parents("#sidebar .widget"),s=$j(e).hasClass("active");s===!0?($j(this).next().slideDown("fast"),$j(e).removeClass("active")):($j(this).next().slideUp("fast"),$j(e).addClass("active"))})});

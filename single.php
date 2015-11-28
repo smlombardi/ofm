@@ -21,8 +21,9 @@ get_header();?>
 		</div>
 
 			<div class="entry">
+				<!-- if we want the post thumb here, we can add it via Media button -->
 				<?php //if ($sa_settings['cf_hidepostthumb'] == '') {the_post_thumbnail('medium', array('class'=>'alignright'));} ?>
-				<?php if (get_field('show_post_thumb')) {the_post_thumbnail('medium', array('class'=>'alignright'));} ?>
+				<?php //if (get_field('show_post_thumb')) {the_post_thumbnail('medium', array('class'=>'alignright'));} ?>
 				<?php the_content(); ?>
 				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:'), 'after' => '</div>' ) ); ?>
 			</div>
