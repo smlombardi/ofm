@@ -28,7 +28,7 @@ get_header();?>
 
     <div class="row">
     <div class="video small-12 columns text-center">
-      <h1 class="video-title"><?php the_title(); ?></h1>
+      <div class="video-title"><?php the_title(); ?></div>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field('video_number'); ?>?showinfo=0" frameborder="0" allowfullscreen></iframe>
       <div class="video-caption"><?php the_content(); ?></div>
       <img src="<?php bloginfo(stylesheet_directory); ?>/images/horizontal-element.jpg"/>
@@ -82,8 +82,8 @@ get_header();?>
 	<div class="image">
 		<a href="http://oldfashionedmomstore.org/"><img src="/wp-content/uploads/2015/11/pink-grapefruit-marmalade-sugar-scrub-3jar.jpg" alt="Old Fashioned Mom Pink Grapefruit Marmalade Sugar Scrub" /></a>
 	</div>
-			<p class="link"><a href="http://www.oldfashionedmom.org/janeiros-bursting-america/">Old Fashioned Mom Pink Grapefruit Marmalade Sugar Scrub!!</a></p>
-	<div class="excerpt"><p>Buy now!</p></div>
+			<p class="link"><a href="http://oldfashionedmomstore.org/">Old Fashioned Mom Pink Grapefruit Marmalade Sugar Scrub!!</a></p>
+	<div class="excerpt"><p>Delight in the purest ingredients on Earth as your skin soaks up pure organic oils while exfoliating the dead skin away. Leaving your skin feeling forever young!</p></div>
 </li>
 
 <li class="home-box">
@@ -94,7 +94,7 @@ get_header();?>
 		<a href="/ofm-event/"><img src="/wp-content/uploads/2015/11/image1431.jpg" alt="" /></a>
 	</div>
 			<p class="link"><a href="/ofm-event/">Holiday Shopping Extravaganza</a></p>
-	<div class="excerpt"><p>Benefitting the Children's Home of Poughkeepise. Thursday, December 10<br>5-8pm <a href="/ofm-event/">Click for details!</a></p></div>
+	<div class="excerpt"><p>Benefitting the Children's Home of Poughkeepsie. Thursday, December 10<br>5-8pm <a href="/ofm-event/">Click for details!</a></p></div>
 </li>
 
 

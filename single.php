@@ -16,7 +16,7 @@ get_header();?>
 		<div class="dater"><p class="day"><?php the_time('j'); ?></p>
 		<p class="monthyear"><?php the_time('M y'); ?></p></div>
 
-		<h2><?php the_title(); ?></h2>
+		<h1 class="page-title"><?php the_title(); ?></h1>
 		<p class="postauthor">Posted By <?php the_author_posts_link(); ?></p>
 		</div>
 
@@ -28,8 +28,8 @@ get_header();?>
 			</div>
 			<p class="postmetadata">
 			<!--<span class="cat">Posted in <?php the_category(', ') ?></span>-->
-      
-      
+
+
 			<?php edit_post_link('Edit', '&nbsp;|&nbsp;', ''); ?>
 			<?php if ($sa_settings['cf_hidetags'] == '') { the_tags('<br /><span class="tags">Tags: ',', ', '</span>'); } ?>
 			</p>

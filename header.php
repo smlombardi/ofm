@@ -70,14 +70,16 @@
   <div class="row">
     <div class="medium-12 columns text-center no-pad">
       <div class="navbox primary">
-      <?php
-        $margs = array(
-        'menu_id' => 'navbar',
-        'container_class' => 'menu',
-        'depth' => '2',
-        );
-        wp_nav_menu($margs);
-        ?>
+
+        <?php
+            $margs = array(
+            'menu_id' => 'navbar',
+            'container_class' => 'menu',
+            'depth' => '2',
+            'theme_location' => 'secondary-menu'
+            );
+            wp_nav_menu($margs);
+            ?>
       </div>
     </div>
   </div>
