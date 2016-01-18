@@ -22,9 +22,9 @@ get_header();?>
 				</div>
 				<div class="row">
         <div class="video small-12 columns text-center">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field('video_number'); ?>?showinfo=0" frameborder="0" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field('video_number'); ?>" frameborder="0" allowfullscreen></iframe>
         </div>
-
+<!-- ?showinfo=0 -->
 				</div>
 
 				<?php the_content(); ?>

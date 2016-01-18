@@ -243,8 +243,6 @@ img + a {
   font-size: 14px;
 }
 .entry img {
-
-  //   border: 0 #ccc solid;
   max-width: 100% !important;
 }
 #content a:hover,
@@ -991,5 +989,15 @@ li#menu-item-328.clearstick {
   img,
   iframe {
     max-width: 100%;
+  }
+}
+
+.search {
+  .entry {
+    @include clearfix;
+    margin-bottom: 21px;
+  }
+  .posthead h2 {
+    font-weight: bold;
   }
 }

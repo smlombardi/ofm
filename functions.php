@@ -126,7 +126,8 @@ function my_foundation_theme_scripts() {
 //  wp_register_script( 'foundation-js', get_template_directory_uri() . '/foundation/js/foundation.min.js');
   wp_register_style( 'foundation-css', get_template_directory_uri() . '/foundation/css/foundation.css' );
   wp_register_style( 'google-font', 'https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' );
-  wp_register_style( 'main-css', get_template_directory_uri() . '/style.css', true );
+  $ourFile_version = filemtime(dirname(__FILE__). "/style.css");
+  wp_register_style( 'main-css', get_template_directory_uri() . '/style.css', true, $ourFile_version );
 
 //  wp_enqueue_script( 'foundation-js' );
   wp_enqueue_style( 'foundation-css' );
@@ -180,6 +181,15 @@ function create_post_type() {
 		)
 	);
 };
+
+// Exclude images from search results - WordPress
+add_action( 'init', 'exclude_images_from_search_results' );
+function exclude_images_from_search_results() {
+	global $wp_post_types;
+
+	$wp_post_types['attachment']->exclude_from_search = true;
+}
+
 
 
 //sets the content width global variable
@@ -321,6 +331,7 @@ class WP_Widget_Recent_Posts_Exclude extends WP_Widget
 
     }
 }
+
 
 
 

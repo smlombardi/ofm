@@ -29,7 +29,7 @@ get_header();?>
     <div class="row">
     <div class="video small-12 columns text-center">
       <div class="video-title"><?php the_title(); ?></div>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field('video_number'); ?>?showinfo=0" frameborder="0" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field('video_number'); ?>" frameborder="0" allowfullscreen></iframe>
       <div class="video-caption"><?php the_content(); ?></div>
       <img src="<?php bloginfo(stylesheet_directory); ?>/images/horizontal-element.jpg"/>
     </div>
@@ -48,7 +48,7 @@ get_header();?>
 <ul class="medium-block-grid-3 spacer-top-md">
 <?php
 		// $categories = array(209,303,106,147,3,12,6,7,105,83,8,4,5);
-		$categories = array(5,4,8,83,105,7,6,12,3,147,106,303,209);
+		$categories = array(5,4,8,83,105,7,6,12,3,147,106,303,209,546);
 
 		foreach($categories as $category) {
 		$args = array( 'posts_per_page' => 1,'cat' => $category, 'orderby' => 'date', 'order' => 'DESC' );
@@ -86,7 +86,7 @@ get_header();?>
 	<div class="excerpt"><p>Delight in the purest ingredients on Earth as your skin soaks up pure organic oils while exfoliating the dead skin away. Leaving your skin feeling forever young!</p></div>
 </li>
 
-<li class="home-box">
+<!--<li class="home-box">
 	<div class="section-title">
 		<a href="/ofm-event/">OFM Special Event</a>
 	</div>
@@ -95,7 +95,7 @@ get_header();?>
 	</div>
 			<p class="link"><a href="/ofm-event/">Holiday Shopping Extravaganza</a></p>
 	<div class="excerpt"><p>Benefitting the Children's Home of Poughkeepsie. Thursday, December 10<br>5-8pm <a href="/ofm-event/">Click for details!</a></p></div>
-</li>
+</li>-->
 
 
 </ul>

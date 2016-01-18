@@ -29,19 +29,19 @@ get_header();?>
     $args = array( 'post_type' => 'video', 'posts_per_page' => 10, 'orderby' => 'date', 'order' => 'DESC' );
     $loop = new WP_Query( $args );
     while ( $loop->have_posts() ) : $loop->the_post(); ?>
-    
- 
+
+
     <div class="row">
     <div class="video small-12 columns text-center">
       <h1 class="video-title"><?php the_title(); ?></h1>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field('video_number'); ?>?showinfo=0" frameborder="0" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php the_field('video_number'); ?>" frameborder="0" allowfullscreen></iframe>
       <div class="video-caption"><?php the_content(); ?></div>
       <img src="<?php bloginfo(stylesheet_directory); ?>/images/horizontal-element.jpg"/>
     </div>
     </div>
-   
 
-<?php endwhile;  ?> 
+
+<?php endwhile;  ?>
 
 
 
